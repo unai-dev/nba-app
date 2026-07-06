@@ -16,4 +16,17 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://api.nba2kapi.com",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+        headers: {
+          "x-api-key": process.env.VITE_API_KEY,
+        },
+      },
+    },
+  },
 });

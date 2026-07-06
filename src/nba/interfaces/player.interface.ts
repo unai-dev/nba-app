@@ -1,5 +1,3 @@
-import type { Badges } from "./player.response";
-
 export interface Player {
   id: string;
   height: string;
@@ -13,4 +11,12 @@ export interface Player {
   weight: string;
   badges: Badges;
   archetype: string;
+}
+interface Badges {
+  bronze: number;
+  gold: number;
+  hallOfFame: number;
+  legendary: number;
+  silver: number;
+  total: number;
 }

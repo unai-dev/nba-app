@@ -14,13 +14,13 @@ export const SearchPlayer: FC = () => {
         {/* Header */}
         <CustomHeader
           title="NBA Player"
-          subTitle="Explore ratings, badges &amp; archetypes for your favorite players"
+          subTitle="Explore ratings, badges & archetypes for your favorite players"
           label="2K25 Ratings"
         />
 
         {/* SearchBar */}
         <CustomSearchBar
-          placeholder="Search players, teams, archetypes…"
+          placeholder="Search players, teams, archetypes..."
           query={query}
           onQuery={handleQuery}
         />

@@ -2,14 +2,14 @@ import { type FC } from "react";
 
 import { CustomHeader } from "@/components/shared/CustomHeader";
 import { CustomSearchBar } from "@/components/shared/CustomSearchBar";
-import { PlayersList } from "../components/PlayersList";
+import { PlayersList } from "../components/players/PlayersList";
 import { useNba } from "../hooks/useNba";
 
 export const SearchPlayer: FC = () => {
   const { query, results, handleQuery, resetQuery } = useNba();
 
   return (
-    <main className="min-h-screen bg-background px-4 py-10 sm:px-6 lg:px-8">
+    <main className="min-h-screen px-4 py-10 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <CustomHeader
@@ -33,7 +33,7 @@ export const SearchPlayer: FC = () => {
           {query && (
             <button
               onClick={resetQuery}
-              className="text-primary text-sm font-semibold cursor-pointer hover:scale-110 hover:duration-500 "
+              className="text-primary text-xs font-semibold hover:underline "
             >
               Limpiar
             </button>

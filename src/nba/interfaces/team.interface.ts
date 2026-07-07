@@ -1,4 +1,4 @@
-export interface TeamResponse {
+export interface Team {
   id: string;
   name: string;
   city: string;
@@ -11,15 +11,10 @@ export interface TeamResponse {
   arena: string;
   founded: number;
   championships: number;
-  record: TeamRecord;
+  wins: number;
+  losses: number;
   colors: {
     primary: string;
     secondary: string;
   };
-}
-export type Conference = "East" | "West";
-
-export interface TeamRecord {
-  wins: number;
-  losses: number;
 }

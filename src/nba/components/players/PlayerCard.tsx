@@ -1,6 +1,6 @@
 import type { Player } from "../../interfaces/player.interface";
 import type { FC } from "react";
-import { OverallRing } from "./OverallRing";
+import { OverallRing } from "../OverallRing";
 import { BadgePill } from "./BadgePill";
 
 interface Props {

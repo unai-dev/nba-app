@@ -3,7 +3,7 @@ import type { PlayerResponse } from "../interfaces/player.response";
 import { nbaApi } from "../api/nbaApi";
 
 export const getPlayers = async (): Promise<Player[]> => {
-  const response = await nbaApi.get<PlayerResponse[]>("/api/players");
+  const response = await nbaApi.get<PlayerResponse[]>("/players");
 
   return response.data.map((player) => ({
     id: player.id,

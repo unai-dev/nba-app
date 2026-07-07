@@ -1,6 +1,6 @@
+import type { Player } from "@/nba/interfaces/player.interface";
 import { type FC } from "react";
-import type { Player } from "../interfaces/player.interface";
-import { PlayerCard } from "./players/PlayerCard";
+import { PlayerCard } from "./PlayerCard";
 
 interface Props {
   players: Player[];

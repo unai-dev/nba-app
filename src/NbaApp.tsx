@@ -1,9 +1,10 @@
-import { SearchPlayer } from "./nba/pages/SearchPlayer";
+import { SearchTeam } from "./nba/components/teams/SearchTeam";
 
 export const NbaApp = () => {
   return (
     <>
-      <SearchPlayer />
+      {/* <SearchPlayer /> */}
+      <SearchTeam />
     </>
   );
 };

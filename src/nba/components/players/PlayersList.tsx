@@ -1,6 +1,6 @@
 import { type FC } from "react";
 import type { Player } from "../interfaces/player.interface";
-import { PlayerCard } from "./PlayerCard";
+import { PlayerCard } from "./players/PlayerCard";
 
 interface Props {
   players: Player[];

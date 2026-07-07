@@ -6,7 +6,7 @@ import { PlayersList } from "../components/players/PlayersList";
 import { useNba } from "../hooks/useNba";
 
 export const SearchPlayer: FC = () => {
-  const { query, results, handleQuery, resetQuery } = useNba();
+  const { query, playerResults, handleQuery, resetQuery } = useNba();
 
   return (
     <main className="min-h-screen px-4 py-10 sm:px-6 lg:px-8">
@@ -28,7 +28,7 @@ export const SearchPlayer: FC = () => {
         {/* Results count */}
         <div className="mb-5 flex items-center gap-2">
           <span className="text-muted-foreground text-sm">
-            {results.length} resultados
+            {playerResults.length} resultados
           </span>
           {query && (
             <button
@@ -41,8 +41,8 @@ export const SearchPlayer: FC = () => {
         </div>
 
         {/* Grid */}
-        {results.length > 0 ? (
-          <PlayersList players={results} />
+        {playerResults.length > 0 ? (
+          <PlayersList players={playerResults} />
         ) : (
           <h1 className="mt-5 text-muted-foreground text-xl font-thin ">
             No hay jugadores disponibles

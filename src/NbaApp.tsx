@@ -4,8 +4,8 @@ import { SearchTeam } from "./nba/pages/SearchTeam";
 export const NbaApp = () => {
   return (
     <>
-      <SearchPlayer />
-      {/* <SearchTeam /> */}
+      {/* <SearchPlayer /> */}
+      <SearchTeam />
     </>
   );
 };

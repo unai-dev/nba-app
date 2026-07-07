@@ -1,5 +1,5 @@
 import type { Player } from "../interfaces/player.interface";
-import type { TeamResponse } from "../interfaces/team.response";
+import type { Team } from "../interfaces/team.interface";
 
 export const MOCK_PLAYERS: Player[] = [
   {
@@ -214,7 +214,7 @@ export const MOCK_PLAYERS: Player[] = [
   },
 ];
 
-export const MOCK_TEAMS: TeamResponse[] = [
+export const MOCK_TEAMS: Team[] = [
   // === TUS 12 ORIGINALES (YA CON LOGO) ===
 
   {
@@ -230,7 +230,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "TD Garden",
     founded: 1946,
     championships: 18,
-    record: { wins: 64, losses: 18 },
+    wins: 64,
+    losses: 18,
     colors: {
       primary: "oklch(0.55 0.15 150)",
       secondary: "oklch(0.85 0.06 90)",
@@ -249,7 +250,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Ball Arena",
     founded: 1967,
     championships: 1,
-    record: { wins: 57, losses: 25 },
+    wins: 57,
+    losses: 25,
     colors: {
       primary: "oklch(0.45 0.12 250)",
       secondary: "oklch(0.78 0.16 75)",
@@ -268,7 +270,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Paycom Center",
     founded: 1967,
     championships: 1,
-    record: { wins: 68, losses: 14 },
+    wins: 68,
+    losses: 14,
     colors: {
       primary: "oklch(0.6 0.16 240)",
       secondary: "oklch(0.68 0.18 35)",
@@ -287,7 +290,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Crypto.com Arena",
     founded: 1947,
     championships: 17,
-    record: { wins: 50, losses: 32 },
+    wins: 50,
+    losses: 32,
     colors: {
       primary: "oklch(0.55 0.18 300)",
       secondary: "oklch(0.82 0.16 85)",
@@ -306,7 +310,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Chase Center",
     founded: 1946,
     championships: 7,
-    record: { wins: 48, losses: 34 },
+    wins: 48,
+    losses: 34,
     colors: { primary: "oklch(0.5 0.14 255)", secondary: "oklch(0.8 0.16 80)" },
   },
   {
@@ -322,7 +327,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Fiserv Forum",
     founded: 1968,
     championships: 2,
-    record: { wins: 49, losses: 33 },
+    wins: 49,
+    losses: 33,
     colors: {
       primary: "oklch(0.45 0.08 155)",
       secondary: "oklch(0.9 0.03 90)",
@@ -341,7 +347,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Madison Square Garden",
     founded: 1946,
     championships: 2,
-    record: { wins: 51, losses: 31 },
+    wins: 51,
+    losses: 31,
     colors: {
       primary: "oklch(0.55 0.16 250)",
       secondary: "oklch(0.68 0.18 45)",
@@ -360,7 +367,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Target Center",
     founded: 1989,
     championships: 0,
-    record: { wins: 49, losses: 33 },
+    wins: 49,
+    losses: 33,
     colors: {
       primary: "oklch(0.4 0.1 255)",
       secondary: "oklch(0.65 0.14 165)",
@@ -379,7 +387,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "American Airlines Center",
     founded: 1980,
     championships: 1,
-    record: { wins: 39, losses: 43 },
+    wins: 39,
+    losses: 43,
     colors: {
       primary: "oklch(0.55 0.15 250)",
       secondary: "oklch(0.35 0.03 250)",
@@ -398,7 +407,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Kaseya Center",
     founded: 1988,
     championships: 3,
-    record: { wins: 37, losses: 45 },
+    wins: 37,
+    losses: 45,
     colors: { primary: "oklch(0.5 0.2 20)", secondary: "oklch(0.72 0.18 45)" },
   },
   {
@@ -414,7 +424,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Rocket Mortgage FieldHouse",
     founded: 1970,
     championships: 1,
-    record: { wins: 64, losses: 18 },
+    wins: 64,
+    losses: 18,
     colors: { primary: "oklch(0.4 0.12 20)", secondary: "oklch(0.78 0.14 85)" },
   },
   {
@@ -430,7 +441,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Footprint Center",
     founded: 1968,
     championships: 0,
-    record: { wins: 36, losses: 46 },
+    wins: 36,
+    losses: 46,
     colors: {
       primary: "oklch(0.5 0.18 300)",
       secondary: "oklch(0.68 0.18 40)",
@@ -452,7 +464,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Wells Fargo Center",
     founded: 1946,
     championships: 3,
-    record: { wins: 47, losses: 35 },
+    wins: 47,
+    losses: 35,
     colors: {
       primary: "oklch(0.45 0.14 260)",
       secondary: "oklch(0.75 0.12 30)",
@@ -471,7 +484,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Scotiabank Arena",
     founded: 1995,
     championships: 1,
-    record: { wins: 36, losses: 46 },
+    wins: 36,
+    losses: 46,
     colors: {
       primary: "oklch(0.45 0.18 20)",
       secondary: "oklch(0.85 0.02 90)",
@@ -490,7 +504,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "United Center",
     founded: 1966,
     championships: 6,
-    record: { wins: 40, losses: 42 },
+    wins: 40,
+    losses: 42,
     colors: {
       primary: "oklch(0.55 0.2 30)",
       secondary: "oklch(0.9 0.02 90)",
@@ -509,7 +524,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "State Farm Arena",
     founded: 1946,
     championships: 1,
-    record: { wins: 41, losses: 41 },
+    wins: 41,
+    losses: 41,
     colors: {
       primary: "oklch(0.65 0.2 40)",
       secondary: "oklch(0.9 0.05 100)",
@@ -528,7 +544,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Spectrum Center",
     founded: 1988,
     championships: 0,
-    record: { wins: 27, losses: 55 },
+    wins: 27,
+    losses: 12,
     colors: {
       primary: "oklch(0.55 0.18 240)",
       secondary: "oklch(0.75 0.12 180)",
@@ -547,7 +564,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Gainbridge Fieldhouse",
     founded: 1967,
     championships: 0,
-    record: { wins: 47, losses: 35 },
+    wins: 47,
+    losses: 35,
     colors: {
       primary: "oklch(0.55 0.16 260)",
       secondary: "oklch(0.85 0.1 90)",
@@ -566,7 +584,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Little Caesars Arena",
     founded: 1941,
     championships: 3,
-    record: { wins: 17, losses: 65 },
+    wins: 17,
+    losses: 65,
     colors: {
       primary: "oklch(0.55 0.18 260)",
       secondary: "oklch(0.75 0.12 30)",
@@ -585,7 +604,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Kia Center",
     founded: 1989,
     championships: 0,
-    record: { wins: 47, losses: 35 },
+    wins: 47,
+    losses: 35,
     colors: {
       primary: "oklch(0.55 0.18 250)",
       secondary: "oklch(0.75 0.12 180)",
@@ -604,7 +624,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Capital One Arena",
     founded: 1961,
     championships: 1,
-    record: { wins: 25, losses: 57 },
+    wins: 25,
+    losses: 57,
     colors: {
       primary: "oklch(0.55 0.18 260)",
       secondary: "oklch(0.75 0.12 30)",
@@ -623,7 +644,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "FedExForum",
     founded: 1995,
     championships: 0,
-    record: { wins: 27, losses: 55 },
+    wins: 27,
+    losses: 55,
     colors: {
       primary: "oklch(0.55 0.18 240)",
       secondary: "oklch(0.75 0.12 180)",
@@ -642,7 +664,8 @@ export const MOCK_TEAMS: TeamResponse[] = [
     arena: "Smoothie King Center",
     founded: 2002,
     championships: 0,
-    record: { wins: 49, losses: 33 },
+    wins: 49,
+    losses: 33,
     colors: {
       primary: "oklch(0.45 0.12 260)",
       secondary: "oklch(0.75 0.12 30)",

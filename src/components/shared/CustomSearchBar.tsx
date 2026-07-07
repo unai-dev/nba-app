@@ -3,7 +3,11 @@ import { type FC } from "react";
 
 interface Props {
   placeholder: string;
+<<<<<<< HEAD
   query: string;
+=======
+
+>>>>>>> 9ee5d8fdda05cd1d7239db5658d17684a7ad2ce6
   onQuery: (query: string) => void;
 }
 

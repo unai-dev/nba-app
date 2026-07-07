@@ -4,11 +4,12 @@ interface Props {
   overall: number;
 }
 
+const size = 50;
+const stroke = 2;
+const radius = (size - stroke) / 2;
+const circumference = 2 * Math.PI * radius;
+
 export const OverallRing: FC<Props> = ({ overall }) => {
-  const size = 50;
-  const stroke = 2;
-  const radius = (size - stroke) / 2;
-  const circumference = 2 * Math.PI * radius;
   const progress = (overall / 100) * circumference;
   const color =
     overall >= 95

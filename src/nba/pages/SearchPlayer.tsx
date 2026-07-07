@@ -69,31 +69,30 @@ export const SearchPlayer: FC = () => {
             onQuery={handleQuery}
           />
 
-          {/* Results count */}
-          <div className="mb-5 flex items-center gap-2">
-            <span className="text-muted-foreground text-sm">
-              {playerResults.length} resultados
-            </span>
-            {query && (
-              <button
-                onClick={resetQuery}
-                className="text-primary text-xs font-semibold hover:underline "
-              >
-                Limpiar
-              </button>
-            )}
-          </div>
-
-          {/* Grid */}
-          {playerResults.length > 0 ? (
-            <PlayersList players={playerResults} />
-          ) : (
-            <h1 className="mt-5 text-muted-foreground text-xl font-thin ">
-              No hay jugadores disponibles
-            </h1>
+        {/* Results count */}
+        <div className="mb-5 flex items-center gap-2">
+          <span className="text-muted-foreground text-sm">
+            {results.length} resultados
+          </span>
+          {query && (
+            <button
+              onClick={resetQuery}
+              className="text-primary text-xs font-semibold hover:underline "
+            >
+              Limpiar
+            </button>
           )}
         </div>
-      </main>
-    </>
+
+        {/* Grid */}
+        {results.length > 0 ? (
+          <PlayersList players={results} />
+        ) : (
+          <h1 className="mt-5 text-muted-foreground text-xl font-thin ">
+            No hay jugadores disponibles
+          </h1>
+        )}
+      </div>
+    </main>
   );
 };

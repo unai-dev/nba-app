@@ -1,26 +1,22 @@
-import axios from "axios";
 import type { Player } from "../interfaces/player.interface";
 import type { PlayerResponse } from "../interfaces/player.response";
+import { nbaApi } from "../api/nbaApi";
 
 export const getPlayers = async (): Promise<Player[]> => {
-  const { data } = await axios.get<PlayerResponse>("/api/players", {
-    params: {
-      limit: 30,
-    },
-  });
+  const response = await nbaApi.get<PlayerResponse[]>("/api/players");
 
-  return data.data.map((player) => ({
-    id: player._id,
+  return response.data.map((player) => ({
+    id: player.id,
     name: player.name,
     archetype: player.archetype,
     badges: player.badges,
     height: player.height,
-    img: player.playerImage,
+    img: player.img,
     overall: player.overall,
     positions: player.positions,
     slug: player.slug,
     team: player.team,
-    url: player.playerUrl,
+    url: player.url,
     weight: player.weight,
   }));
 };

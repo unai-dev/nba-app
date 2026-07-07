@@ -1,10 +1,11 @@
 import { useState, useMemo, type FC, useEffect } from "react";
 
-import { PlayerCard } from "../components/PlayerCard";
 import { CustomHeader } from "@/components/shared/CustomHeader";
 import { CustomSearchBar } from "@/components/shared/CustomSearchBar";
 import type { Player } from "../interfaces/player.interface";
 import { getPlayers } from "../actions/get-players.action";
+import { MOCK_PLAYERS } from "../mock-data/mock.data";
+import { PlayersList } from "../components/PlayersList";
 
 export const SearchPlayer: FC = () => {
   const [query, setQuery] = useState("");
@@ -26,9 +27,11 @@ export const SearchPlayer: FC = () => {
     setQuery(query);
   };
 
-  const filtered = useMemo(() => {
+  const searchedPlayers = useMemo(() => {
     const q = query.toLowerCase().trim();
-    const results = players.filter((p) => {
+
+    const currentPlayers = players.length > 0 ? players : MOCK_PLAYERS;
+    const results = currentPlayers.filter((p) => {
       const matchesQuery =
         !q ||
         p.name.toLowerCase().includes(q) ||
@@ -60,7 +63,7 @@ export const SearchPlayer: FC = () => {
         {/* Results count */}
         <div className="mb-5 flex items-center gap-2">
           <span className="text-muted-foreground text-sm">
-            {filtered.length} {filtered.length === 1 ? "player" : "players"}
+            {searchedPlayers.length} results
           </span>
           {query && (
             <button
@@ -75,12 +78,7 @@ export const SearchPlayer: FC = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {filtered.length > 0 &&
-            filtered.map((player) => (
-              <PlayerCard key={player.id} player={player} />
-            ))}
-        </div>
+        <PlayersList players={searchedPlayers} />
       </div>
     </main>
   );

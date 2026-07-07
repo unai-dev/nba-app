@@ -21,10 +21,19 @@ export const useNba = () => {
   }, []);
 
   const results = players.filter((p) => {
-    return p.name.toLowerCase().includes(query);
+    return (
+      // busqueda por nombre
+      p.name.toLowerCase().includes(query) ||
+      // busqueda por equipo
+      p.team.toLowerCase().includes(query) ||
+      // busqueda por arquetipo
+      p.archetype.toLowerCase().includes(query)
+    );
   });
 
-  const handleQuery = (query: string) => setQuery(query);
+  const handleQuery = (query: string) => {
+    setQuery(query);
+  };
 
   const resetQuery = () => setQuery("");
 

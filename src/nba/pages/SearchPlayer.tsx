@@ -28,20 +28,26 @@ export const SearchPlayer: FC = () => {
         {/* Results count */}
         <div className="mb-5 flex items-center gap-2">
           <span className="text-muted-foreground text-sm">
-            {results.length} results
+            {results.length} resultados
           </span>
           {query && (
             <button
               onClick={resetQuery}
-              className="text-primary text-sm font-semibold hover:underline"
+              className="text-primary text-sm font-semibold cursor-pointer hover:scale-110 hover:duration-500 "
             >
-              Clear all
+              Limpiar
             </button>
           )}
         </div>
 
         {/* Grid */}
-        <PlayersList players={results} />
+        {results.length > 0 ? (
+          <PlayersList players={results} />
+        ) : (
+          <h1 className="mt-5 text-muted-foreground text-xl font-thin ">
+            No hay jugadores disponibles
+          </h1>
+        )}
       </div>
     </main>
   );

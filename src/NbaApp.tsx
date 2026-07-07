@@ -1,11 +1,11 @@
-import { SearchPlayer } from "./nba/pages/SearchPlayer";
-import { SearchTeam } from "./nba/pages/SearchTeam";
+import { RouterProvider } from "react-router";
+
+import { appRouter } from "./nba/router/app.router";
 
 export const NbaApp = () => {
   return (
     <>
-      <SearchPlayer />
-      {/* <SearchTeam /> */}
+      <RouterProvider router={appRouter} />
     </>
   );
 };

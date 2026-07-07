@@ -2,7 +2,7 @@ import type { FC } from "react";
 
 export const Navbar: FC = () => {
   return (
-    <nav className="w-full border-b border-[rgba(255,255,255,0.12)] bg-slate-950/60 backdrop-blur-md fixed">
+    <nav className="w-full border-b border-[rgba(255,255,255,0.12)] bg-slate-950/60 backdrop-blur-md ">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <div>
           <span className="text-lg font-semibold tracking-tight text-white">

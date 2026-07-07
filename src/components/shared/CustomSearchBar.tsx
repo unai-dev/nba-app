@@ -3,6 +3,7 @@ import { useState, type FC } from "react";
 
 interface Props {
   placeholder: string;
+
   onQuery: (query: string) => void;
 }
 

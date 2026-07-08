@@ -1,11 +1,11 @@
-import { TeamCard } from "../components/teams/TeamCard";
 import { CustomSearchBar } from "@/components/shared/CustomSearchBar";
 import { CustomHeader } from "@/components/shared/CustomHeader";
-import { useNba } from "../hooks/useNba";
 import { Navbar } from "@/components/shared/Navbar";
+import { useNbaTeams } from "../hooks/useNbaTeams";
+import { TeamsList } from "../components/teams/TeamsList";
 
 export const SearchTeam = () => {
-  const { teamResults, query, handleQuery, resetQuery } = useNba();
+  const { teamResults, query, setQuery } = useNbaTeams();
 
   return (
     <>
@@ -23,7 +23,7 @@ export const SearchTeam = () => {
           <CustomSearchBar
             placeholder="Search teams, cities, divisions..."
             query={query}
-            onQuery={handleQuery}
+            onQuery={(query: string) => setQuery(query)}
           />
 
           {/* Results count */}
@@ -34,7 +34,7 @@ export const SearchTeam = () => {
             </span>
             {query && (
               <button
-                onClick={resetQuery}
+                onClick={() => setQuery("")}
                 className="text-primary text-xs font-semibold hover:underline"
               >
                 Clear all
@@ -43,13 +43,7 @@ export const SearchTeam = () => {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {teamResults.length > 0 ? (
-              teamResults.map((team) => <TeamCard key={team.id} team={team} />)
-            ) : (
-              <h1>No hay equipos disponibles</h1>
-            )}
-          </div>
+          <TeamsList teams={teamResults} />
         </div>
       </main>
     </>

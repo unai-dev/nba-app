@@ -3,11 +3,11 @@ import { type FC } from "react";
 import { CustomHeader } from "@/components/shared/CustomHeader";
 import { CustomSearchBar } from "@/components/shared/CustomSearchBar";
 import { PlayersList } from "../components/players/PlayersList";
-import { useNba } from "../hooks/useNba";
 import { Navbar } from "@/components/shared/Navbar";
+import { useNbaPlayers } from "../hooks/useNbaPlayers";
 
 export const SearchPlayer: FC = () => {
-  const { query, playerResults, handleQuery, resetQuery } = useNba();
+  const { query, playerResults, setQuery } = useNbaPlayers();
 
   return (
     <>
@@ -25,7 +25,7 @@ export const SearchPlayer: FC = () => {
           <CustomSearchBar
             placeholder="Search players, teams, archetypes..."
             query={query}
-            onQuery={handleQuery}
+            onQuery={(query: string) => setQuery(query)}
           />
 
           {/* Results count */}
@@ -35,7 +35,7 @@ export const SearchPlayer: FC = () => {
             </span>
             {query && (
               <button
-                onClick={resetQuery}
+                onClick={() => setQuery("")}
                 className="text-primary text-xs font-semibold hover:underline "
               >
                 Limpiar
@@ -44,13 +44,7 @@ export const SearchPlayer: FC = () => {
           </div>
 
           {/* Grid */}
-          {playerResults.length > 0 ? (
-            <PlayersList players={playerResults} />
-          ) : (
-            <h1 className="mt-5 text-muted-foreground text-xl font-thin ">
-              No hay jugadores disponibles
-            </h1>
-          )}
+          <PlayersList players={playerResults} />
         </div>
       </main>
     </>

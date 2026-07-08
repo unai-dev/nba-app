@@ -16,7 +16,7 @@ export const PlayersList: FC<Props> = ({ players }) => {
           ))}
         </div>
       ) : (
-        <h1 className="mt-5 text-muted-foreground text-xl font-thin ">
+        <h1 className="text-2xl font-thin text-muted-foreground mt-5 ">
           No hay jugadores disponibles
         </h1>
       )}

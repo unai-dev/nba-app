@@ -1,5 +1,5 @@
 import type { Player } from "../interfaces/player.interface";
-import type { PlayerResponse } from "../interfaces/player.response";
+import type { PlayerResponse } from "../interfaces/responses/player.response";
 import { nbaApi } from "../api/nbaApi";
 
 export const getPlayers = async (): Promise<Player[]> => {

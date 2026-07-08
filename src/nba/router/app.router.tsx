@@ -1,15 +1,15 @@
 import { createBrowserRouter, Navigate } from "react-router";
-import { SearchPlayer } from "../pages/SearchPlayer";
-import { SearchTeam } from "../pages/SearchTeam";
+import { PlayersPage } from "../pages/PlayersPage";
+import { TeamsPage } from "../pages/TeamsPage";
 
 export const appRouter = createBrowserRouter([
   {
     path: "/players",
-    element: <SearchPlayer />,
+    element: <PlayersPage />,
   },
   {
     path: "/teams",
-    element: <SearchTeam />,
+    element: <TeamsPage />,
   },
   {
     path: "*",

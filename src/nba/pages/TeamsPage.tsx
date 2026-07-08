@@ -1,10 +1,13 @@
+import type { FC } from "react";
+
 import { CustomSearchBar } from "@/components/shared/CustomSearchBar";
 import { CustomHeader } from "@/components/shared/CustomHeader";
 import { Navbar } from "@/components/shared/Navbar";
 import { useNbaTeams } from "../hooks/useNbaTeams";
 import { TeamsList } from "../components/teams/TeamsList";
+import { ResultsCount } from "../components/shared/ResultsCount";
 
-export const SearchTeam = () => {
+export const TeamsPage: FC = () => {
   const { teamResults, query, setQuery } = useNbaTeams();
 
   return (
@@ -27,20 +30,11 @@ export const SearchTeam = () => {
           />
 
           {/* Results count */}
-          <div className="mb-5 flex items-center gap-2">
-            <span className="text-muted-foreground text-xs font-medium">
-              {teamResults.length} {teamResults.length === 1 ? "team" : "teams"}{" "}
-              found
-            </span>
-            {query && (
-              <button
-                onClick={() => setQuery("")}
-                className="text-primary text-xs font-semibold hover:underline"
-              >
-                Clear all
-              </button>
-            )}
-          </div>
+          <ResultsCount
+            query={query}
+            results={teamResults.length}
+            onClick={() => setQuery("")}
+          />
 
           {/* Grid */}
           <TeamsList teams={teamResults} />

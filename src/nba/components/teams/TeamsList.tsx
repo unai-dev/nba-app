@@ -12,7 +12,9 @@ export const TeamsList: FC<Props> = ({ teams }) => {
         {teams.length > 0 ? (
           teams.map((team) => <TeamCard key={team.id} team={team} />)
         ) : (
-          <h1>No hay equipos disponibles</h1>
+          <h1 className="text-2xl font-thin text-muted-foreground mt-5">
+            No hay equipos disponibles
+          </h1>
         )}
       </div>
     </>

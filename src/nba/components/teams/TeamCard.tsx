@@ -1,6 +1,6 @@
 import { Trophy, MapPin } from "lucide-react";
 
-import { OverallRing } from "../OverallRing";
+import { OverallRing } from "../shared/OverallRing";
 import type { Team } from "@/nba/interfaces/team.interface";
 
 interface TeamCardProps {
@@ -17,7 +17,6 @@ export const TeamCard = ({ team }: TeamCardProps) => {
       className="group block rounded-2xl border border-[oklch(1_0_0/8%)] bg-[oklch(0.15_0.008_240)] hover:border-[oklch(0.72_0.2_48/50%)] hover:bg-[oklch(0.17_0.01_240)] transition-all duration-300 overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary hover:scale-105 hover:m-5"
       aria-label={`View ${team.name} profile`}
     >
-      {/* Accent bar tinted with team color */}
       <div
         className="h-1.5 w-full"
         style={{ background: team.colors.primary }}

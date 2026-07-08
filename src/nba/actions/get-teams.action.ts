@@ -1,6 +1,6 @@
 import { nbaApi } from "../api/nbaApi";
 import type { Team } from "../interfaces/team.interface";
-import type { TeamResponse } from "../interfaces/team.response";
+import type { TeamResponse } from "../interfaces/responses/team.response";
 
 export const getTeams = async (): Promise<Team[]> => {
   const response = await nbaApi.get<TeamResponse[]>("/teams");

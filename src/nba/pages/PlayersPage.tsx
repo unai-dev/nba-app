@@ -5,8 +5,9 @@ import { CustomSearchBar } from "@/components/shared/CustomSearchBar";
 import { PlayersList } from "../components/players/PlayersList";
 import { Navbar } from "@/components/shared/Navbar";
 import { useNbaPlayers } from "../hooks/useNbaPlayers";
+import { ResultsCount } from "../components/shared/ResultsCount";
 
-export const SearchPlayer: FC = () => {
+export const PlayersPage: FC = () => {
   const { query, playerResults, setQuery } = useNbaPlayers();
 
   return (
@@ -29,19 +30,11 @@ export const SearchPlayer: FC = () => {
           />
 
           {/* Results count */}
-          <div className="mb-5 flex items-center gap-2">
-            <span className="text-muted-foreground text-sm">
-              {playerResults.length} resultados
-            </span>
-            {query && (
-              <button
-                onClick={() => setQuery("")}
-                className="text-primary text-xs font-semibold hover:underline "
-              >
-                Limpiar
-              </button>
-            )}
-          </div>
+          <ResultsCount
+            query={query}
+            results={playerResults.length}
+            onClick={() => setQuery("")}
+          />
 
           {/* Grid */}
           <PlayersList players={playerResults} />

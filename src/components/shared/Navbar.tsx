@@ -7,20 +7,20 @@ export const Navbar: FC = () => {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <div>
           <span className="text-lg font-semibold tracking-tight text-white">
-            NBA App
+            NBA <span className="text-primary">Explorer</span>
           </span>
         </div>
 
         <div className="flex items-center gap-3">
           <Link
             to="/players"
-            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="rounded-xl border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10 hover:ring-2 hover:ring-primary"
           >
             Players
           </Link>
           <Link
             to="/teams"
-            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary"
+            className="rounded-xl border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10 hover:ring-2 hover:ring-primary "
           >
             Teams
           </Link>

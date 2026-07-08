@@ -19,7 +19,7 @@ export const CustomSearchBar: FC<Props> = ({ onQuery, placeholder, query }) => {
         type="text"
         placeholder={placeholder}
         value={query}
-        onChange={(e) => onQuery(e.target.value.trim().toLowerCase())}
+        onChange={(e) => onQuery(e.target.value.trim().toUpperCase())}
         className="w-full h-14 pl-12 pr-12 rounded-2xl border border-[oklch(1_0_0/8%)] bg-[oklch(0.15_0.008_240)] text-foreground placeholder:text-muted-foreground text-sm font-medium focus:outline-none  focus:border-primary transition-all duration-200"
       />
     </div>

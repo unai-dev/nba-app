@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import { BADGE_CONFIG } from "@/nba/constants/badgeStyles";
 import type { FC } from "react";
+import { BADGE_CONFIG } from "../../constants/badgeStyles";
 
 interface Props {
   count: number;

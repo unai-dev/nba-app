@@ -1,6 +1,6 @@
+import { PlayersPage } from "@/features/nba/pages/PlayersPage";
+import { TeamsPage } from "@/features/nba/pages/TeamsPage";
 import { createBrowserRouter, Navigate } from "react-router";
-import { PlayersPage } from "../pages/PlayersPage";
-import { TeamsPage } from "../pages/TeamsPage";
 
 export const appRouter = createBrowserRouter([
   {

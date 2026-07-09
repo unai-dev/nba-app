@@ -1,11 +1,14 @@
 import { RouterProvider } from "react-router";
 
-import { appRouter } from "./nba/router/app.router";
+import { AuthContextProvider } from "./features/auth/context/AuthContextProvider";
+import { appRouter } from "./router/app.router";
 
 export const NbaApp = () => {
   return (
     <>
-      <RouterProvider router={appRouter} />
+      <AuthContextProvider>
+        <RouterProvider router={appRouter} />
+      </AuthContextProvider>
     </>
   );
 };

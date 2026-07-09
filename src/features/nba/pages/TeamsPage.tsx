@@ -11,9 +11,9 @@ export const TeamsPage: FC = () => {
   const { teamResults, query, setQuery } = useNbaTeams();
 
   return (
-    <>
+    <div className="flex min-h-screen  text-white">
       <Navbar />
-      <main className="min-h-screen px-4 py-10 sm:px-6 lg:px-8">
+      <main className="flex-1 min-h-screen px-4 py-10 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <CustomHeader
@@ -40,6 +40,6 @@ export const TeamsPage: FC = () => {
           <TeamsList teams={teamResults} />
         </div>
       </main>
-    </>
+    </div>
   );
 };

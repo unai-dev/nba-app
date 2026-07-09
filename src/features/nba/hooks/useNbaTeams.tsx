@@ -25,15 +25,15 @@ export const useNbaTeams = () => {
   const teamResults = teams.filter((team) => {
     return (
       // busqueda por nombre
-      team.name.toLowerCase().includes(query) ||
+      team.name.toUpperCase().includes(query) ||
       // busqueda por ciudad
-      team.city.toLowerCase().includes(query) ||
+      team.city.toUpperCase().includes(query) ||
       // busqueda por abreviacion
-      team.abbreviation.toLowerCase().includes(query) ||
+      team.abbreviation.toUpperCase().includes(query) ||
       // busqueda por division
-      team.division.toLowerCase().includes(query) ||
+      team.division.toUpperCase().includes(query) ||
       // busqueda por estadio/arena
-      team.arena.toLowerCase().includes(query)
+      team.arena.toUpperCase().includes(query)
     );
   });
 

@@ -28,11 +28,11 @@ export const useNbaPlayers = () => {
   const playerResults = players.filter((p) => {
     return (
       // busqueda por nombre
-      p.name.toLowerCase().includes(query) ||
+      p.name.toUpperCase().includes(query) ||
       // busqueda por equipo
-      p.team.toLowerCase().includes(query) ||
+      p.team.toUpperCase().includes(query) ||
       // busqueda por arquetipo
-      p.archetype.toLowerCase().includes(query)
+      p.archetype.toUpperCase().includes(query)
     );
   });
 

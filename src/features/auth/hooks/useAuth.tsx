@@ -1,9 +1,10 @@
 import { useState } from "react";
 import type { User } from "../interfaces/user.interface";
+import type { AuthStatus } from "../context/AuthContext";
 
 export const useAuth = () => {
   const [user, setUser] = useState<User | null>(null);
-  const [authStatus, setAuthStatus] = useState<boolean>(false);
+  const [authStatus, setAuthStatus] = useState<AuthStatus>("not-auth");
 
   const handleLogin = (password: string) => {
     console.log("Iniciando Sesion");
@@ -12,7 +13,7 @@ export const useAuth = () => {
 
   const handleLogout = () => {
     setUser(null);
-    setAuthStatus(false);
+    setAuthStatus("not-auth");
   };
 
   return {

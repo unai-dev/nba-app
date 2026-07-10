@@ -9,6 +9,7 @@ export const AuthContextProvider: FC<PropsWithChildren> = ({ children }) => {
     <AuthContext
       value={{
         authStatus: authStatus,
+        isAuth: authStatus === "checking",
         user: user,
 
         login: handleLogin,

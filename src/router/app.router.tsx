@@ -1,15 +1,21 @@
 import { PlayersPage } from "@/features/nba/pages/PlayersPage";
 import { TeamsPage } from "@/features/nba/pages/TeamsPage";
 import { createBrowserRouter, Navigate } from "react-router";
+import { PrivateRoute } from "./PrivateRoute";
+import { LoginPage } from "@/features/auth/pages/LoginPage";
 
 export const appRouter = createBrowserRouter([
   {
     path: "/players",
-    element: <PlayersPage />,
+    element: <PrivateRoute element={<PlayersPage />} />,
   },
   {
     path: "/teams",
-    element: <TeamsPage />,
+    element: <PrivateRoute element={<TeamsPage />} />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
   {
     path: "*",

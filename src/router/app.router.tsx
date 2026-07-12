@@ -7,11 +7,13 @@ import { LoginPage } from "@/features/auth/pages/LoginPage";
 export const appRouter = createBrowserRouter([
   {
     path: "/players",
-    element: <PrivateRoute element={<PlayersPage />} />,
+    // element: <PrivateRoute element={<PlayersPage />} />,
+    element: <PlayersPage />,
   },
   {
     path: "/teams",
-    element: <PrivateRoute element={<TeamsPage />} />,
+    // element: <PrivateRoute element={<TeamsPage />} />,
+    element: <TeamsPage />,
   },
   {
     path: "/login",
